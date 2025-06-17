@@ -6,11 +6,12 @@ def turn_right():
     turn_left()
     turn_left()
 
-
+# Move forward until hitting a wall
 while front_is_clear():
     move()
 turn_left()
 
+# Main loop: follow the right-hand wall until reaching the goal
 while not at_goal():
     if right_is_clear():
         turn_right()
