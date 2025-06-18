@@ -6,11 +6,11 @@ def encode(original_text, shift_amount):
     # Initialize an empty string to store the encrypted message
     encrypted_text = ''
     # Loop over each letter in the original text
-    for letter in original_text:
+    for char in original_text:
         # Loop over the alphabet to find the matching letter
         for alph_letter in alphabet:
             # If the letter matches the current alphabet letter
-            if alph_letter == letter:
+            if alph_letter == char:
                 # Calculate new position with the shift (caesar cipher)
                 alph_position = alphabet.index(alph_letter) + shift_amount
                 # If position goes beyond 'z', wrap around the alphabet
@@ -18,10 +18,12 @@ def encode(original_text, shift_amount):
                     alph_position = alph_position - 26
                 # Append the encrypted letter to the result
                 encrypted_text += alphabet[alph_position]
-        # If the character is not a letter (space, punctuation, etc.)
-        if letter not in alphabet:
-            # Add a space instead (note: this will replace all non-letters with spaces)
-            encrypted_text += ' '
+        # If the character is not a letter
+        if char not in alphabet:
+            # Add a space instead
+            encrypted_text += char
+        elif char == ' ':
+            encrypted_text += char
     # Print the encrypted message
     print(encrypted_text)
 
@@ -29,10 +31,10 @@ def decode(secret_text, shift_amount):
     # Initialize an empty string to store the decrypted message
     decrypted_text = ''
     # Loop over each letter in the encrypted text
-    for letter in secret_text:
+    for char in secret_text:
         # Loop over the alphabet to find the matching letter
         for alph_letter in alphabet:
-            if alph_letter == letter:
+            if alph_letter == char:
                 # Calculate original position by subtracting the shift
                 alph_position = alphabet.index(alph_letter) - shift_amount
                 # If position goes before 'a', wrap around to the end
@@ -41,9 +43,11 @@ def decode(secret_text, shift_amount):
                 # Append the decrypted letter to the result
                 decrypted_text += alphabet[alph_position]
         # If the character is not a letter
-        if letter not in alphabet:
-            # Add a space instead (same note as above)
-            decrypted_text += ' '
+        if char not in alphabet:
+            # Add a space instead
+            decrypted_text += char
+        elif char == ' ':
+            decrypted_text += char
     # Print the decrypted message
     print(decrypted_text)
 

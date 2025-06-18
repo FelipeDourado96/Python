@@ -19,7 +19,7 @@ gen1_pokemon = [
     "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke",
     "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool",
     "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash",
-    "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch’d",
+    "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd",
     "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder",
     "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno",
     "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggutor",
