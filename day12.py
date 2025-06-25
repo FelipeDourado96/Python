@@ -4,6 +4,7 @@ print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100. Good luck!")
 
 def define_difficulty():
+    """Sets the difficulty of the game"""
     user_difficulty = input("Choose the difficulty: 'easy' or 'hard':\t").lower()
     if user_difficulty == 'easy':
         amount_of_attempts = 10
@@ -18,7 +19,8 @@ def define_difficulty():
         print(f"\nAs you typed wrongly, you will play on Extreme Mode.\nYou have {amount_of_attempts} attempts")
         return amount_of_attempts
 
-def guess(number_guessed, correct_number):
+def check_answer(number_guessed, correct_number):
+    """Checks if the number guessed by the user is the same as the computer"""
     if number_guessed == correct_number:
         return True
     elif number_guessed > correct_number:
@@ -29,6 +31,7 @@ def guess(number_guessed, correct_number):
         return False
 
 def play_game(amount_of_attempts):
+    """The computer chooses a number between 1 and 100, and the user tries to guess it. If the user guesses the number correctly, the game ends and the user wins. Otherwise, the user can keep trying until they run out of attempts."""
     correct_number = choice(range(1, 101))
     win_condition = False
     while not win_condition and amount_of_attempts > 0:
@@ -37,7 +40,7 @@ def play_game(amount_of_attempts):
         except ValueError:
             print("Invalid input. Please enter a number.")
             continue
-        win_condition = guess(number_guessed, correct_number)
+        win_condition = check_answer(number_guessed, correct_number)
         if win_condition:
             print(f"You got it! The Answer was really {correct_number}.")
         else:
